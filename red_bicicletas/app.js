@@ -1,3 +1,4 @@
+require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -32,7 +33,9 @@ app.use(session({
 
 var mongoose = require('mongoose');
 
-var mongoDB = 'mongodb://localhost/red_bicicletas';
+// var mongoDB = 'mongodb://localhost/red_bicicletas';
+// var mongoDB = 'mongodb+srv://admin2:uRbnUHVZJVv9zaT5@red-bicicletas.h8p1n.mongodb.net/test?retryWrites=true&w=majority';
+var mongoDB = process.env.MONGO_URI
 mongoose.connect(mongoDB, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
@@ -117,8 +120,8 @@ app.post('/resetPassword', function(req, res){
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/bicicletas', loggedIn, biciletasRouter);
-app.use('/api/bicicletas', validarUsuario, bicicletasAPIRouter);
-app.use('/api/usuarios', validarUsuario, usuariosAPIRouter);
+app.use('/api/bicicletas', bicicletasAPIRouter);
+app.use('/api/usuarios', usuariosAPIRouter);
 app.use('/api/auth', authApiRouter);
 app.use('/usuarios', usuariosRouter);
 app.use('/token', tokenRouter);
