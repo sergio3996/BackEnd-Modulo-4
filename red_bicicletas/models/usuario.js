@@ -70,7 +70,7 @@ usuarioSchema.methods.enviar_email_bienvenida = function(cb) {
             from: 'sergio3996@hotmail.com',
             to: email_destination,
             subject: 'Verificación de cuenta',
-            text: 'Hola,\n\n' + 'Por favor, para verificar su cuenta haga click en este link: \n' + 'http://localhost:3000' + '\/token/confirmation\/' + token.token + '.\n'
+            text: 'Hola,\n\n' + 'Por favor, para verificar su cuenta haga click en este link: \n' + 'https://red-bicicletas-4.herokuapp.com' + '\/token/confirmation\/' + token.token + '.\n'
         };
 
         mailer.sendMail(mailOptions, function(err) {
