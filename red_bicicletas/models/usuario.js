@@ -67,7 +67,7 @@ usuarioSchema.methods.enviar_email_bienvenida = function(cb) {
         if (err) { return console.log(err.message); }
 
         const mailOptions = {
-            from: 'no-reply@redbicicletas.com',
+            from: 'sergio3996@hotmail.com',
             to: email_destination,
             subject: 'Verificación de cuenta',
             text: 'Hola,\n\n' + 'Por favor, para verificar su cuenta haga click en este link: \n' + 'http://localhost:3000' + '\/token/confirmation\/' + token.token + '.\n'
