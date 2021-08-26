@@ -32,13 +32,5 @@ if(process.env.NODE_ENV === 'production') {
     }
 }
 
-// const mailConfig = {
-//     host: 'smtp.ethereal.email',
-//     port: 587,
-//     auth: {
-//         user: 'roman.zieme@ethereal.email',
-//         pass: 'pEtSpHVZZKJ8VpJhUG'
-//     }
-// };
 
 module.exports = nodemailer.createTransport(mailConfig);
