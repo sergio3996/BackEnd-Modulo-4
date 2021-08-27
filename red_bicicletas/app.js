@@ -126,6 +126,10 @@ app.use('/api/auth', authApiRouter);
 app.use('/usuarios', usuariosRouter);
 app.use('/token', tokenRouter);
 
+app.use('/privacy_policy', function(req,res ){
+  res.sendFile('public/policy_privacy.html')
+});
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
