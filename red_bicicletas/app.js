@@ -129,6 +129,9 @@ app.use('/token', tokenRouter);
 app.use('/privacy_policy', function(req,res ){
   res.sendFile('public/policy_privacy.html')
 });
+app.use('/google60350feb7e95e7e1', function(req,res ){
+  res.sendFile('public/google60350feb7e95e7e1.html')
+});
 
 
 // catch 404 and forward to error handler
